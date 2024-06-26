@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            /* Remove default margin and padding */
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-image {
+            background-image: url('https://m.media-amazon.com/images/S/pv-target-images/d6151dc2fb8a7860e60d4ab41cf28ec65b3ed4ebb3e352fc212820a6408a096a.jpg');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 100vw; /* Set maximum width to full viewport width */
+            min-height: 100vh; /* Set minimum height to full viewport height */
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-text {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .snap-button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .snap-button:hover {
+            background-color: #1558b0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body class="relative bg-gray-100 flex items-center justify-center h-screen">
+    <div class="background-image"></div>
+    <div class="container">
+        <!-- Content inside the container -->
+        <div class="mx-auto flex flex-col md:flex-row items-center">
+            <!-- Left Section -->
+            <div class="w-full md:w-1/3 flex flex-col items-center mb-6 md:mb-0">
+                <div class="mb-4 mt-4 w-3/5">
+                    <img src="https://img.freepik.com/free-photo/black-woman-trendy-grey-leather-jacket-posing-beige-background-studio-winter-autumn-fashion-look_273443-141.jpg" alt="Fashion Image 1" class="mx-auto rounded-xl shadow-lg">
+                </div>
+                <div class="mb-4 w-3/5 rounded-sm">
+                    <img src="https://st4.depositphotos.com/12985790/20643/i/450/depositphotos_206432966-stock-photo-attractive-fashionable-woman-posing-white.jpg" alt="Fashion Image 2" class="mx-auto rounded-xl shadow-lg">
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="w-full md:w-2/3 flex flex-col items-center justify-center relative">
+                <h1 class="header-text mb-4">
+                    Unlock your personalized fashion experience! Let our AI stylist analyze your outfit and give you tailored style advice. Your perfect look is just a snapshot away!
+                </h1>
+                <button id="snapButton" class="snap-button">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Your SVG icon code -->
+                    </svg>
+                    Snap Now
+                </button>
+                <!-- Any additional content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Your script imports and JavaScript code (if any) -->
+</body>
+</html>
